@@ -1,1 +1,1 @@
-# devops-fundations
+# devops-foundation
