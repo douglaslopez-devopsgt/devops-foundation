@@ -88,3 +88,16 @@ jobs:
 7. Asegúrate de agregar el token de acceso a GitHub (`GITHUB_TOKEN`) como una variable de entorno. Puedes hacer esto en la sección "Secretos" de tu repositorio. 
 
 Una vez que hayas guardado el archivo de flujo de trabajo en tu repositorio, el flujo de trabajo se ejecutará automáticamente cuando se empuje una nueva versión de código a la rama principal (`main`). La acción construirá el archivo jar y lo colocará en el directorio `build/libs`, y también creará una nueva release en GitHub y cargará el archivo jar como un artefacto.
+
+
+## Para hacer un commit y un push a tu repositorio en Visual Studio Code, sigue estos pasos:
+
+1. Abre el proyecto en Visual Studio Code.
+2. Abre la sección de "Source Control" haciendo clic en el icono correspondiente en la barra lateral izquierda.
+3. Haz clic en la sección "Changes" para ver los cambios que has realizado en tu proyecto.
+4. Agrega los cambios que deseas confirmar haciendo clic en el signo "+" junto a cada archivo modificado o añadido. También puedes hacer clic en el botón "+ All" para agregar todos los cambios.
+5. Escribe un mensaje descriptivo del commit en el cuadro de texto "Message" en la parte superior de la sección "Changes".
+6. Haz clic en el botón "✓" para hacer el commit. 
+7. Ahora, para hacer un push, haz clic en el botón "..." en la sección "Changes" y selecciona "Push" en el menú desplegable.
+8. Si es necesario, ingresa tus credenciales de GitHub o de otra plataforma de alojamiento de repositorios.
+9. Espera a que se complete el proceso de push.
