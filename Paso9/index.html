@@ -163,11 +163,22 @@ on:
 </ol>
 <pre><code>jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Build Jar
-      run: ./gradlew bootJar
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'corretto'
+
+    - name: Build with Maven
+      run: mvn clean package
+
 </code></pre>
 <ol>
 <li>
@@ -177,23 +188,13 @@ on:
 <p>Si quieres agregar la acción para que también cree una release, puedes agregar otro paso que use el comando <code>create-release</code> de la API de GitHub. Por ejemplo:</p>
 </li>
 </ol>
-<pre><code>- name: Crear Release
-      id: create_release
-      uses: actions/create-release@v1
+<pre><code>    - name: Release JAR
+      id: release
+      uses: elgohr/Github-Release-Action@v4
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: &lt;&lt;Token&gt;&gt;
       with:
-        tag_name: v1.0.0
-        release_name: Release 1.0.0
-        body: |
-          Descripción de la release
-        draft: false
-        prerelease: false
-    - name: Subir archivo Jar
-      uses: actions/upload-artifact@v2
-      with:
-        name: build
-        path: build/libs/*.jar
+        title: ${{ github.sha }}
 </code></pre>
 <ol>
 <li>
