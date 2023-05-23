@@ -36,7 +36,7 @@ Ahora, puedes utilizar este secreto en tus acciones de GitHub para crear release
 
 Para crear un GitHub Action que construya una release de un archivo jar usando Gradle y Spring Boot, puedes seguir los siguientes pasos:
 
-1. Crea un archivo de flujo de trabajo de GitHub Actions en tu repositorio. Puedes hacer esto haciendo clic en la pestaña "Acciones" en tu repositorio y luego haciendo clic en el botón "Nuevo flujo de trabajo". Dale un nombre descriptivo a tu flujo de trabajo y guarda el archivo como `nombre-del-archivo.yml` en la carpeta `.github/workflows/` de tu repositorio.
+1. Crea un archivo de flujo de trabajo de GitHub Actions en tu repositorio. Puedes hacer esto haciendo clic en la pestaña "Acciones" en tu repositorio y luego haciendo clic en el botón "Nuevo flujo de trabajo". Dale un nombre descriptivo a tu flujo de trabajo y guarda el archivo como `build.yml` en la carpeta `.github/workflows/` de tu repositorio.
 
 2. Define las propiedades básicas del flujo de trabajo, como la versión de la plataforma de ejecución y el evento que activará el flujo de trabajo. Por ejemplo, si quieres activar el flujo de trabajo cuando se empuja una nueva versión de código a la rama principal (`main`), puedes usar lo siguiente:
 
