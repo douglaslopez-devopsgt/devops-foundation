@@ -1,11 +1,4 @@
-## Para abrir una terminal en Amazon Linux WorkSpaces, sigue estos pasos:
 
-1. Inicia sesión en tu WorkSpace de Amazon Linux.
-2. Haz clic en el icono de la barra de menú superior que se parece a un monitor y una llave inglesa llamado "Applications" (aplicaciones).
-3. Busca "Terminal" en la lista de aplicaciones y haz clic en ella para abrirla.
-4. Se abrirá una nueva ventana de terminal.
-
-Alternativamente, puedes usar el atajo de teclado "Ctrl + Alt + T" para abrir una terminal en Amazon Linux WorkSpaces.
 
 ## Para clonar un repositorio utilizando HTTPS desde GitHub, sigue estos pasos:
 

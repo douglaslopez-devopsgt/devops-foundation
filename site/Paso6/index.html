@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Paso 6 - Devops Foundations Devops.gt</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Paso 6";
+        var mkdocs_page_input_path = "Paso6.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Devops Foundations Devops.gt
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Creacion de Repositorio Codigo</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso1/">Paso 1</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso2/">Paso 2</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso3/">Paso 3</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso4/">Paso 4</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Creacion de API</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso5/">Paso 5</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Paso 6</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#para-crear-una-api-rest-hello-world-usando-spring-boot-initializer-sigue-estos-pasos">Para crear una API REST Hello World usando Spring Boot Initializer, sigue estos pasos:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#para-hacer-un-commit-y-un-push-a-tu-repositorio-en-visual-studio-code-sigue-estos-pasos">Para hacer un commit y un push a tu repositorio en Visual Studio Code, sigue estos pasos:</a>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso7/">Paso 7</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso8/">Paso 8</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Creacion de Pipeline</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../Paso9/">Paso 9</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Devops Foundations Devops.gt</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+          <li>Creacion de API &raquo;</li>
+      <li>Paso 6</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="crea-una-api-en-spring-boot">Crea una API en spring boot</h1>
+<h2 id="para-crear-una-api-rest-hello-world-usando-spring-boot-initializer-sigue-estos-pasos">Para crear una API REST Hello World usando Spring Boot Initializer, sigue estos pasos:</h2>
+<ol>
+<li>Ve al sitio web de Spring Initializr en https://start.spring.io/</li>
+<li>En la sección "Project", selecciona "Gradle Project" según tu preferencia.</li>
+<li>En la sección "Language", selecciona "Java" como lenguaje de programación.</li>
+<li>En la sección "Packaging", elige "Jar".</li>
+<li>En la sección "Dependencies", busca y selecciona "Spring Web".</li>
+<li>En la version de Java selecciona 8</li>
+<li>Haz clic en el botón "Generate" para descargar el archivo ZIP del proyecto.</li>
+<li>Descomprime el archivo ZIP y copia el contenido dentro del folder de tu repositorio.</li>
+</ol>
+<h2 id="para-hacer-un-commit-y-un-push-a-tu-repositorio-en-visual-studio-code-sigue-estos-pasos">Para hacer un commit y un push a tu repositorio en Visual Studio Code, sigue estos pasos:</h2>
+<ol>
+<li>Abre el proyecto en Visual Studio Code.</li>
+<li>Abre la sección de "Source Control" haciendo clic en el icono correspondiente en la barra lateral izquierda.</li>
+<li>Haz clic en la sección "Changes" para ver los cambios que has realizado en tu proyecto.</li>
+<li>Agrega los cambios que deseas confirmar haciendo clic en el signo "+" junto a cada archivo modificado o añadido. También puedes hacer clic en el botón "+ All" para agregar todos los cambios.</li>
+<li>Escribe un mensaje descriptivo del commit en el cuadro de texto "Message" en la parte superior de la sección "Changes".</li>
+<li>Haz clic en el botón "✓" para hacer el commit. </li>
+<li>Ahora, para hacer un push, haz clic en el botón "..." en la sección "Changes" y selecciona "Push" en el menú desplegable.</li>
+<li>Si es necesario, ingresa tus credenciales de GitHub o de otra plataforma de alojamiento de repositorios.</li>
+<li>Espera a que se complete el proceso de push.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../Paso5/" class="btn btn-neutral float-left" title="Paso 5"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Paso7/" class="btn btn-neutral float-right" title="Paso 7">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../Paso5/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../Paso7/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
