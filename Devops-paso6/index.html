@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Devops paso6 - Devops Foundations Devops.gt</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Devops paso6";
+        var mkdocs_page_input_path = "Devops-paso6.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Devops Foundations Devops.gt
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Infrastructure-as-Code</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="" href="../Infrastructure-as-Code/labs.md">Labs</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../Infrastructure-as-Code/Conectarse-ssh.md">Connecion SSH</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../Infrastructure-as-Code/actualizar-codigo-fork.md">Actualizar Codigo</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Devops Foundations Devops.gt</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
+      <li>Devops paso6</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Para crear un token de GitHub para crear releases y luego guardarlo como un secreto de Actions, sigue estos pasos:</p>
+<ol>
+<li>
+<p>Ve a la página de configuración de tu cuenta de GitHub y haz clic en "Developer settings".</p>
+</li>
+<li>
+<p>En la barra lateral izquierda, haz clic en "Personal access tokens".</p>
+</li>
+<li>
+<p>Haz clic en "Generate new token".</p>
+</li>
+<li>
+<p>Escribe un nombre descriptivo para el token en "Note".</p>
+</li>
+<li>
+<p>Seleccione los permisos necesarios para crear releases. En este caso, debes seleccionar al menos "repo".</p>
+</li>
+<li>
+<p>Haz clic en "Generate token".</p>
+</li>
+<li>
+<p>Copia el token generado. Este es el único momento en el que podrás ver el token completo, por lo que asegúrate de guardarlo en un lugar seguro.</p>
+</li>
+<li>
+<p>Vuelve a tu repositorio en GitHub y haz clic en la pestaña "Settings".</p>
+</li>
+<li>
+<p>En la barra lateral izquierda, haz clic en "Secrets".</p>
+</li>
+<li>
+<p>Haz clic en "New secret".</p>
+</li>
+<li>
+<p>Escribe un nombre descriptivo para el secreto en "Name". Por ejemplo, "GITHUB_TOKEN".</p>
+</li>
+<li>
+<p>Pega el token que copiaste anteriormente en "Value".</p>
+</li>
+<li>
+<p>Haz clic en "Add secret".</p>
+</li>
+<li>
+<p>El secreto se guardará y se podrá utilizar en tus acciones de GitHub como <code>${{ secrets.GITHUB_TOKEN }}</code>.</p>
+</li>
+</ol>
+<p>Ahora, puedes utilizar este secreto en tus acciones de GitHub para crear releases sin tener que incluir el token directamente en el archivo de acción.</p>
+<h2 id="construir-github-action">Construir Github action</h2>
+<p>Para crear un GitHub Action que construya una release de un archivo jar usando Gradle y Spring Boot, puedes seguir los siguientes pasos:</p>
+<ol>
+<li>
+<p>Crea un archivo de flujo de trabajo de GitHub Actions en tu repositorio. Puedes hacer esto haciendo clic en la pestaña "Acciones" en tu repositorio y luego haciendo clic en el botón "Nuevo flujo de trabajo". Dale un nombre descriptivo a tu flujo de trabajo y guarda el archivo como <code>nombre-del-archivo.yml</code> en la carpeta <code>.github/workflows/</code> de tu repositorio.</p>
+</li>
+<li>
+<p>Define las propiedades básicas del flujo de trabajo, como la versión de la plataforma de ejecución y el evento que activará el flujo de trabajo. Por ejemplo, si quieres activar el flujo de trabajo cuando se empuja una nueva versión de código a la rama principal (<code>main</code>), puedes usar lo siguiente:</p>
+</li>
+</ol>
+<pre><code>name: Crear Release de Jar
+on:
+  push:
+    branches: [ main ]
+</code></pre>
+<ol>
+<li>Define los trabajos que se ejecutarán en el flujo de trabajo. Puedes definir uno o más trabajos, según sea necesario. Por ejemplo, si solo necesitas construir el archivo jar, puedes definir un trabajo como este:</li>
+</ol>
+<pre><code>jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build Jar
+      run: ./gradlew bootJar
+</code></pre>
+<ol>
+<li>
+<p>El primer paso (<code>actions/checkout@v2</code>) clona tu repositorio en la máquina virtual que se ejecuta el flujo de trabajo. El segundo paso (<code>Build Jar</code>) ejecuta el comando <code>./gradlew bootJar</code> que construirá el archivo jar y lo colocará en el directorio <code>build/libs</code> del proyecto.</p>
+</li>
+<li>
+<p>Si quieres agregar la acción para que también cree una release, puedes agregar otro paso que use el comando <code>create-release</code> de la API de GitHub. Por ejemplo:</p>
+</li>
+</ol>
+<pre><code>- name: Crear Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v1.0.0
+        release_name: Release 1.0.0
+        body: |
+          Descripción de la release
+        draft: false
+        prerelease: false
+    - name: Subir archivo Jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: build
+        path: build/libs/*.jar
+</code></pre>
+<ol>
+<li>
+<p>El paso <code>create-release</code> crea una nueva release en GitHub y <code>upload-artifact</code> sube el archivo jar generado por Gradle en el paso anterior.</p>
+</li>
+<li>
+<p>Asegúrate de agregar el token de acceso a GitHub (<code>GITHUB_TOKEN</code>) como una variable de entorno. Puedes hacer esto en la sección "Secretos" de tu repositorio. </p>
+</li>
+</ol>
+<p>Una vez que hayas guardado el archivo de flujo de trabajo en tu repositorio, el flujo de trabajo se ejecutará automáticamente cuando se empuje una nueva versión de código a la rama principal (<code>main</code>). La acción construirá el archivo jar y lo colocará en el directorio <code>build/libs</code>, y también creará una nueva release en GitHub y cargará el archivo jar como un artefacto.</p>
+<h2 id="para-hacer-un-commit-y-un-push-a-tu-repositorio-en-visual-studio-code-sigue-estos-pasos">Para hacer un commit y un push a tu repositorio en Visual Studio Code, sigue estos pasos:</h2>
+<ol>
+<li>Abre el proyecto en Visual Studio Code.</li>
+<li>Abre la sección de "Source Control" haciendo clic en el icono correspondiente en la barra lateral izquierda.</li>
+<li>Haz clic en la sección "Changes" para ver los cambios que has realizado en tu proyecto.</li>
+<li>Agrega los cambios que deseas confirmar haciendo clic en el signo "+" junto a cada archivo modificado o añadido. También puedes hacer clic en el botón "+ All" para agregar todos los cambios.</li>
+<li>Escribe un mensaje descriptivo del commit en el cuadro de texto "Message" en la parte superior de la sección "Changes".</li>
+<li>Haz clic en el botón "✓" para hacer el commit. </li>
+<li>Ahora, para hacer un push, haz clic en el botón "..." en la sección "Changes" y selecciona "Push" en el menú desplegable.</li>
+<li>Si es necesario, ingresa tus credenciales de GitHub o de otra plataforma de alojamiento de repositorios.</li>
+<li>Espera a que se complete el proceso de push.</li>
+</ol>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
