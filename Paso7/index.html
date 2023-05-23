@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Creacion de organizacion - Devops Foundations Devops.gt</title>
+    <title>Paso7 - Devops Foundations Devops.gt</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Creacion de organizacion";
-        var mkdocs_page_input_path = "Devops-Paso2.md";
+        var mkdocs_page_name = "Paso7";
+        var mkdocs_page_input_path = "Paso7.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,7 +71,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a> &raquo;</li>
-      <li>Creacion de organizacion</li>
+      <li>Paso7</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -80,21 +80,34 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="creacion-de-organizacion">Creacion de organizacion</h1>
-<p>El Siguiente paso debera ser realizado solo por el Ingeniero Devops 
-Escoge un nombre de organizacion y recopila los nombres de usuarios de github de tus companeros
-Crea la organizacion siguiendo estos pasos</p>
-<h2 id="para-crear-una-organizacion-en-github-y-agregar-a-tus-companeros-de-equipo-sigue-estos-pasos">Para crear una organización en GitHub y agregar a tus compañeros de equipo, sigue estos pasos:</h2>
+                <h2 id="para-clonar-un-repositorio-utilizando-https-desde-github-sigue-estos-pasos">Para clonar un repositorio utilizando HTTPS desde GitHub, sigue estos pasos:</h2>
 <ol>
-<li>Inicia sesión en tu cuenta de GitHub.</li>
-<li>Haz clic en tu avatar de perfil en la esquina superior derecha de la página y selecciona "Your organizations" (tus organizaciones) en el menú desplegable.</li>
-<li>En la página "Your organizations", haz clic en el botón "New organization" (nueva organización) en la esquina superior derecha de la página.</li>
-<li>Ingresa un nombre para tu organización, una dirección de correo electrónico y una descripción si lo deseas. Luego, selecciona la opción "Free" (gratuita) en el menú desplegable "Organization billing" (facturación de la organización).</li>
-<li>Haz clic en el botón "Create organization" (crear organización).</li>
-<li>Una vez creada la organización, serás dirigido a la página de configuración de la organización. Desde allí, puedes agregar a tus compañeros de equipo haciendo clic en el botón "Invite teams or people" (invitar equipos o personas).</li>
-<li>Ingresa los usuarios de github de tu equipo  "Invite members" (invitar miembros) y haz clic en el botón "Add" (agregar).</li>
-<li>En la página de invitación, puedes personalizar el mensaje de invitación que recibirán tus compañeros de equipo. Cuando hayas terminado, haz clic en el botón "Send" (enviar).</li>
+<li>Ve al repositorio que deseas clonar en GitHub.</li>
+<li>Haz clic en el botón "Code" (código) que se encuentra arriba de la lista de archivos del repositorio.</li>
+<li>Selecciona "HTTPS" como opción de clonación.</li>
+<li>Copia la URL HTTPS que se muestra.</li>
+<li>Abre la terminal en tu sistema local.</li>
+<li>Navega hasta la ubicación en la que deseas clonar el repositorio.</li>
+<li>Escribe el siguiente comando para clonar el repositorio:</li>
 </ol>
+<p><code>git clone [URL HTTPS del repositorio]</code></p>
+<p>Por ejemplo:</p>
+<p><code>git clone https://github.com/tu-usuario/tu-repositorio.git</code></p>
+<ol>
+<li>Presiona Enter para ejecutar el comando.</li>
+</ol>
+<p>El repositorio se clonará en tu sistema local. Si el repositorio es privado, se te pedirá que ingreses tus credenciales de GitHub para autenticarte antes de que se te permita clonarlo.</p>
+<h2 id="abre-el-repositorio-usando-vscode">Abre el repositorio usando vscode</h2>
+<ol>
+<li>En la terminal navega al directorio del repositorio con el comando </li>
+</ol>
+<pre><code>cd &lt;nombre del repositorio&gt;
+</code></pre>
+<ol>
+<li>Escribe el siguiente comando para abrir visual studio code</li>
+</ol>
+<pre><code>code .
+</code></pre>
               
             </div>
           </div><footer>
